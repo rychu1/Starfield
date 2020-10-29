@@ -5,8 +5,8 @@ void setup()
   parts = new Particle[1000];
   for(int i = 0; i<parts.length; i++) {
     parts[i] = new Particle();
-    parts[0] = new OddballParticle();
   }
+  parts[0] = new OddballParticle();
 }
 void draw()
 {
@@ -36,22 +36,25 @@ class Particle
     fill(mycolor);
     ellipse((float)myx, (float)myy, 25, 25);
 }
+}
 
 class OddballParticle extends Particle
 {
-  OddballParticle() {
+  OddballParticle() 
+  {
     myx = 500;
     myy = 500;
     mycolor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
     myangle = (Math.random()*2*Math.PI);
     myspeed = Math.random()*5;
   }
-  void show() {
+  void show() 
+  {
     fill(mycolor);
     ellipse((float)myx, (float)myy, 100, 100);
   }
-  void move() {
+  void move() 
+  {
     myy = myy + myspeed;
   }
-}
 }
